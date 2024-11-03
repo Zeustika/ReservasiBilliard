@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO booking (id_lapangan, id_pengguna, username, tanggal_booking, jam_mulai, lama_booking) VALUES (?, ?, ?, ?, ?, ?)";
         
         if ($stmt = $mysqli->prepare($sql)) {
-            $stmt->bind_param("iisssi", $param_idlapangan, $param_idpengguna, $param_username, $param_tanggalbooking, $param_jammulai, $param_lamabooking);
+            // Update tipe binding parameter ke "iissss" untuk mendukung VARCHAR
+            $stmt->bind_param("iissss", $param_idlapangan, $param_idpengguna, $param_username, $param_tanggalbooking, $param_jammulai, $param_lamabooking);
             
             // Atur parameter
             $param_idlapangan = $id_lapangan;
@@ -48,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_username = $username;
             $param_tanggalbooking = $tanggal_booking;
             $param_jammulai = $jam_mulai;
-            $param_lamabooking = $lama_booking;
+
+            // Jika lama_booking adalah "Personal", atur sebagai teks, bukan angka
+            $param_lamabooking = ($lama_booking === "Personal") ? "Personal" : $lama_booking;
             
             // Eksekusi statement
             if ($stmt->execute()) {
@@ -90,8 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <center>
-    <h1 class="mt-3 mb-5">
-     Form Booking Lapangan</h1>
+    <h1 class="mt-3 mb-5">Form Booking Lapangan</h1>
     <div class="col-4">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <!-- Input Data Hilang dari tampilan user -->
@@ -99,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="hidden" name="id_pengguna" id="id_pengguna" value="<?php echo $_SESSION['id_pengguna']; ?>">
 
         <label for="username">Username:</label>
-        <input class="form-control" type="text" id="username" name="username" value="<?PHP echo $_SESSION['username']; ?>" required readonly><br>
+        <input class="form-control" type="text" id="username" name="username" value="<?php echo $_SESSION['username']; ?>" required readonly><br>
 
         <div <?php echo (!empty($tgl_err)) ? 'has-error' : ''; ?>>
         <label for="tanggal_booking">Tanggal Booking:</label>
@@ -115,20 +117,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div <?php echo (!empty($lama_err)) ? 'has-error' : ''; ?>>
         <label for="lama_booking">Lama Booking (jam):</label>
-        <select class="form-control" id="lama_booking" name="lama_booking" value="<?php echo $lama_booking; ?>" required>
+        <select class="form-control" id="lama_booking" name="lama_booking" required>
             <option value="1">1 Jam</option>
             <option value="2">2 Jam</option>
             <option value="3">3 Jam</option>
-            <option value="1">4 Jam</option>
-            <option value="2">5 Jam</option>
-            <option value="3">6 Jam</option>
-            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+            <option value="4">4 Jam</option>
+            <option value="5">5 Jam</option>
+            <option value="6">6 Jam</option>
+            <option value="Personal">Personal</option>
         </select><br>
         <span class="help-block"><?php echo $lama_err; ?></span>
+        </div>
 
-
-        <button class="btn btn-primary" type="submit">PESAN </button>
-        </center>
+        <button class="btn btn-primary" type="submit">PESAN</button>
     </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
