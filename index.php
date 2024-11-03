@@ -10,7 +10,7 @@ include 'koneksi.php';
     <title>Billiard Billing - Status Ketersediaan Lapangan</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/"/>
+    <link rel="icon" type="image/png" href="img/bill.png"/>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles -->
