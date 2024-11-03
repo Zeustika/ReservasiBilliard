@@ -79,9 +79,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Billiard Billing - Status Ketersediaan Lapangan</title>
+    <link rel="icon" type="image/png" href="img/bill.png"/>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="css/yozz.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('img/nack.avif');
+            background-color: black;
+            background-size: 30%;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 50px;
+            color: #fff;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+        }
+        .card-title {
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-primary:hover {
+            background-color: #004494;
+            border-color: #004494;
+        }
+        .text-danger {
+            color: #ff4d4d;
+        }
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -105,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Login">
                             </div>
-                            <p class="text-center">Don't have an account? <a href="register.php">Sign up now</a>.</p>
+                            <p class="text-center">Don't have an account? <a href="register.php" class="text-info">Sign up now</a>.</p>
                         </form>
                     </div>
                 </div>
