@@ -13,12 +13,12 @@
             font-family: Arial, sans-serif; /* Gaya font */
         }
         .wrapper {
-            width: 360px;
+            width: 400px;
             padding: 20px;
             margin: 0 auto;
-            background-color: #ffffff; /* Warna latar belakang konten */
-            border-radius: 10px; /* Membuat sudut konten menjadi melengkung */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            background-color: #ffffff; 
+            border-radius: 10px; /
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .btn-primary:hover {
             background-color: #007bff; /* Warna tombol saat dihover */
@@ -28,6 +28,26 @@
         }
         a:hover {
             color: #0056b3; /* Warna tautan saat dihover */
+        }
+        body {
+
+            background: url('img/nack.avif');
+            background-size: 30%;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .table {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+        .mb-3{
+            color: #000;
+        }
+        .btn-secondary:disabled {
+            background-color: #343a40;
         }
     </style>
 </head>
