@@ -8,13 +8,43 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 ?>
+    <style>
+        body {
 
+            background: url('img/nack.avif');
+            background-size: 30%;
+        }
+        .card-body {
+            background: url('img/nack.avif');
+            border-radius: 10px;
+        }
+        .card-title {
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .text-center{
+            color: #fff;
+        }
+        .container {
+            background-color: #6c757d;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary:disabled {
+            background-color: #343a40;
+        }
+    </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link href="css/yozz.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/bill.png"/>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>

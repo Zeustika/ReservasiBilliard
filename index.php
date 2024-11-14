@@ -18,8 +18,8 @@ include 'koneksi.php';
 
     <style>
         body {
+
             background: url('img/nack.avif');
-            background-color: black;;
             background-size: 30%;
             color: #fff;
         }
@@ -27,7 +27,6 @@ include 'koneksi.php';
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             padding: 30px;
-            margin-top: 50px;
         }
         .table {
             background-color: rgba(255, 255, 255, 0.8);
@@ -175,7 +174,7 @@ include 'koneksi.php';
         <span class="copyright">Copyright 2024 &copy; All Rights Reserved</span>
         <ul class="list-inline quicklinks mt-3">
             <li class="list-inline-item">
-                <a href="https://www.youtube.com/@yustikaslamet9432/videos">Tugas ARKOM Informatika UNSIL 2024</a>
+                <a href="https://www.youtube.com/@yustikaslamet9432/videos">Tugas RPL Informatika UNSIL 2024</a>
             </li>
         </ul>
     </div>

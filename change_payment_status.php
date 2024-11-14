@@ -21,6 +21,7 @@ $result = $mysqli->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Payment Status</title>
+    <link rel="icon" type="image/png" href="img/bill.png"/>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -62,3 +63,26 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_booking'])) {
     exit();
 }
 ?>
+    <style>
+        body {
+
+            background: url('img/nack.avif');
+            background-size: 30%;
+            color: #fff;
+        }
+        .container {
+            background-color: #6c757d;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        .table {
+            background-color: #6c757d;
+            color: #000;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary:disabled {
+            background-color: #343a40;
+        }
+    </style>

@@ -33,9 +33,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/bill.png"/>
     <title>Tambah Lapangan</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+
+            background: url('img/nack.avif');
+            background-size: 30%;
+        }
+        .card-body {
+            background: url('img/nack.avif');
+            border-radius: 10px;
+        }
+        .text-center {
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .text-center{
+            color: #fff;
+        }
+        .container {
+            background-color: #6c757d;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        .btn btn-secondary mt-3{
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -57,17 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="jenis_lapangan">Jenis Lapangan:</label>
                 <select name="jenis_lapangan" id="jenis_lapangan" class="form-control">
-                    <option value="Futsal">Futsal</option>
-                    <option value="Badminton">Badminton</option>
+                    <option value="VIP">VIP</option>
+                    <option value="Basic">Basic</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="harga_sewa">Harga Sewa:</label>
                 <input type="number" id="harga_sewa" name="harga_sewa" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="kapasitas_pemain">Kapasitas Pemain:</label>
-                <input type="number" id="kapasitas_pemain" name="kapasitas_pemain" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Tambah Lapangan</button>
         </form>
